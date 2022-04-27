@@ -13,20 +13,23 @@ let user = "";
 let output = "";
 
 // create a function "computerPlay" for the computer to choose between the three randomly
-    // create an array named "choice" containing the three choices
-    // from that array used the random function and return the result
 function computerPlay() {
+    // create an array named "choice" containing the three choices
     const choices = ["ROCK", "PAPER", "SCISSORS"];
+    // from that array used the random function and return the result
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
 }
 
 
 // create a function "play" to compare the "user" and "enemy" and return the result
-function play(user, enemy) {
-    // if (user === "Rock") && (enemy === "Paper") then enemy win
+function playRound(user, enemy) {
+        
+    // ask the user to input his choice and put the value into the user variable make it capitalize
+    user = prompt("Choose --- 'ROCK' 'PAPER' 'SCISSORS' --- ")
     user = user.toUpperCase()
-
+    
+    // if (user === "Rock") && (enemy === "Paper") then enemy win
     if ((user === "ROCK") && (enemy === "PAPER")) {
         return `You: ${user}\nComputer: ${enemy}\nYOU LOSE`;
     // if (user === "Rock") && (enemy === "Scissors") then user win
@@ -54,11 +57,13 @@ function play(user, enemy) {
     }
 }
 
-// ask the user to input his choice and put the value into the user variable make it capitalize
-user = prompt("Choose --- 'ROCK' 'PAPER' 'SCISSORS' --- ")
 
-// call the compare function and assign the result into the "output" variable
-output = play(user, computerPlay());
+// create a function "game()" to play a 5 round game
+function game() {
+    for (let i = 0; i < 5; i++) {
+        output = playRound(user, computerPlay());
+        console.log(output);
+    }
+}
 
-// print the result
-console.log(output);
+game();
