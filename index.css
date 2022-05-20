@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#score {
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+}
+
+#name {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.mybutton {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+button {
+    margin: 10px;
+    padding: 20px 30px;
+}
+
+#announce {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
